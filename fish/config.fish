@@ -10,6 +10,8 @@ set PATH "$HOME/.cargo/bin:$PATH"
 
 set PATH "/Users/lemon/Projects/funpga/oss-cad-suite/bin:$PATH"
 
+set PATH "/Users/lemon/go/bin:$PATH"
+
 alias mamba="micromamba"
 alias cat="bat --theme=base16"
 alias q="QHOME=~/q rlwrap -r ~/q/m64/q"

@@ -13,6 +13,7 @@ SETUVAR _hydro_git_14891:main\u2022\x20
 SETUVAR _hydro_git_1508:main\u2022\x20
 SETUVAR _hydro_git_16238:master\u2022\x20
 SETUVAR _hydro_git_17807:lemon\x20
+SETUVAR _hydro_git_19618:main\u2022\x20
 SETUVAR _hydro_git_20138:\x1d
 SETUVAR _hydro_git_20285:master\x20
 SETUVAR _hydro_git_2046:main\u2022\x20
@@ -21,6 +22,7 @@ SETUVAR _hydro_git_23633:graph\x20
 SETUVAR _hydro_git_23879:master\u2022\x20
 SETUVAR _hydro_git_24122:lemon\x20
 SETUVAR _hydro_git_2417:tests\u2022\x20
+SETUVAR _hydro_git_24391:master\u2022\x20
 SETUVAR _hydro_git_24908:main\u2022\x20
 SETUVAR _hydro_git_25321:dev\u2022\x20
 SETUVAR _hydro_git_25951:tests\x20
@@ -31,10 +33,13 @@ SETUVAR _hydro_git_32279:\x1d
 SETUVAR _hydro_git_32834:main\u2022\x20
 SETUVAR _hydro_git_33855:main\u2022\x20
 SETUVAR _hydro_git_34202:main\u2022\x20
+SETUVAR _hydro_git_3661:main\u2022\x20
 SETUVAR _hydro_git_40118:master\x20
 SETUVAR _hydro_git_4323:main\u2022\x20
 SETUVAR _hydro_git_44048:more\x2dworkshop\u2022\x20
 SETUVAR _hydro_git_44671:master\u2022\x20
+SETUVAR _hydro_git_4633:main\u2022\x20
+SETUVAR _hydro_git_47279:master\u2022\x20
 SETUVAR _hydro_git_47341:master\u2022\x20
 SETUVAR _hydro_git_47437:main\u2022\x20
 SETUVAR _hydro_git_49723:master\u2022\x20
@@ -42,9 +47,15 @@ SETUVAR _hydro_git_49724:\x1d
 SETUVAR _hydro_git_49742:dev\u2022\x20
 SETUVAR _hydro_git_49920:main\u2022\x20
 SETUVAR _hydro_git_5103:main\u2022\x20
-SETUVAR _hydro_git_5155:main\u2022\x20
+SETUVAR _hydro_git_52089:main\u2022\x20
+SETUVAR _hydro_git_52219:simple\x2dgo\u2022\x20
+SETUVAR _hydro_git_52245:simple\x2dgo\u2022\x20
+SETUVAR _hydro_git_52266:simple\x2dgo\u2022\x20
+SETUVAR _hydro_git_52287:simple\x2dgo\u2022\x20
+SETUVAR _hydro_git_52308:simple\x2dgo\u2022\x20
 SETUVAR _hydro_git_53141:main\u2022\x20
 SETUVAR _hydro_git_53373:\x1d
+SETUVAR _hydro_git_5424:main\u2022\x20\u21931\x20
 SETUVAR _hydro_git_55425:master\u2022\x20
 SETUVAR _hydro_git_55560:main\u2022\x20
 SETUVAR _hydro_git_56261:server\x2dstage\x2d1\u2022\x20
@@ -52,6 +63,10 @@ SETUVAR _hydro_git_57055:\x1d
 SETUVAR _hydro_git_57103:lemon\u2022\x20
 SETUVAR _hydro_git_57641:master\u2022\x20
 SETUVAR _hydro_git_57976:dev\u2022\x20
+SETUVAR _hydro_git_59754:main\u2022\x20
+SETUVAR _hydro_git_6036:main\u2022\x20\u21931\x20
+SETUVAR _hydro_git_6098:main\x20
+SETUVAR _hydro_git_62028:main\u2022\x20
 SETUVAR _hydro_git_62247:main\u2022\x20
 SETUVAR _hydro_git_64687:lemon\u2022\x20
 SETUVAR _hydro_git_64933:tests\x20
@@ -65,6 +80,7 @@ SETUVAR _hydro_git_74206:master\u2022\x20
 SETUVAR _hydro_git_74509:main\x20
 SETUVAR _hydro_git_74660:main\u2022\x20
 SETUVAR _hydro_git_74798:cookie\x2dfix\u2022\x20
+SETUVAR _hydro_git_75649:main\u2022\x20
 SETUVAR _hydro_git_77797:master\u2022\x20
 SETUVAR _hydro_git_78798:user\x2dregistration\u2022\x20
 SETUVAR _hydro_git_79063:main\u2022\x20
@@ -73,10 +89,13 @@ SETUVAR _hydro_git_81747:graph\u2022\x20
 SETUVAR _hydro_git_82627:master\u2022\x20
 SETUVAR _hydro_git_86432:\x1d
 SETUVAR _hydro_git_8714:main\x20
+SETUVAR _hydro_git_88724:main\u2022\x20
 SETUVAR _hydro_git_89810:events\u2022\x20
 SETUVAR _hydro_git_90248:\x1d
 SETUVAR _hydro_git_91293:main\u2022\x20
 SETUVAR _hydro_git_9264:\x1d
+SETUVAR _hydro_git_96080:\x1d
+SETUVAR _hydro_git_97293:master\u2022\x20
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:blue
@@ -105,4 +124,4 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/opt/homebrew/opt/openjdk/bin
+SETUVAR fish_user_paths:/opt/homebrew/opt/ruby/bin\x1e/opt/homebrew/opt/openjdk/bin
