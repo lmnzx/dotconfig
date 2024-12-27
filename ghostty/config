@@ -1,0 +1,10 @@
+font-family = "MonoLisa Variable-Script"
+font-style-italic = "Medium Italic"
+font-size = 16
+font-thicken = true
+theme = catppuccin-mocha
+window-padding-x = 10
+window-padding-y = 15
+mouse-hide-while-typing = true
+macos-titlebar-style = hidden
+initial-command = /opt/homebrew/bin/fish -l -c "tmux attach || tmux"

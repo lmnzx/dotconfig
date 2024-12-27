@@ -1,0 +1,10 @@
+[tools]
+go = "latest"
+rust = "latest"
+cargo-binstall = "latest"
+"cargo:eza" = "latest"
+"cargo:ripgrep" = "latest"
+"cargo:bat" = "latest"
+fzf = "latest"
+"cargo:zoxide" = "latest"
+node = "latest"
