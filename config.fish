@@ -1,58 +1,63 @@
 set fish_greeting
-set hydro_symbol_prompt ">"
+set pure_symbol_prompt ">"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-set -gx HOMEBREW_NO_INSTALL_CLEANUP TRUE
+set -gx HOMEBREW_NO_ENV_HINTS TRUE
+set -gx AWS_DEFAULT_PROFILE localstack 
+set -gx UKC_TOKEN cm9ib3Qkc21hbGxpY2sudXNlcnMua3JhZnRjbG91ZDpYd0oxY1ROSkZURjR1N1NRWVN3YVZRTzRmaUh3SnJaeQ==
 
-set PATH "$HOME/.bin:$PATH"
+alias vim="nvim ."
+alias ls="eza --icons=always"
+alias cat="bat --theme=\"Catppuccin Mocha\""
+alias f="fzf --preview 'bat --style=numbers --color=always --theme=\"Catppuccin Mocha\" {}' | xargs -n 1 nvim"
+# alias fzf="fzf --preview 'bat --style=numbers --color=always --theme=\"Catppuccin Mocha\" {}'"
+alias b="brew update && brew upgrade && brew cleanup && cargo install-update --all && opam update && opam upgrade && rustup update &&  npm up -g"
+alias g="git"
+alias lg="lazygit"
+alias q="QHOME=~/.q rlwrap -r ~/.q/m64/q"
+alias k="kubectl"
+alias kctx="kubectx"
+alias kn="kubens"
+alias t="terraform"
 
-set PATH "$HOME/.cargo/bin:$PATH"
+fish_add_path "$HOME/go/bin"
+fish_add_path "$HOME/.local/bin"
+fish_add_path "/opt/homebrew/opt/libpq/bin"
+fish_add_path "$HOME/Library/Python/3.9/bin"
+fish_add_path "$HOME/.iximiuz/labctl/bin"
+fish_add_path "$HOME/.codelldb/adapter"
 
-set PATH "/Users/lemon/Projects/funpga/oss-cad-suite/bin:$PATH"
+set -Ux FZF_DEFAULT_OPTS "\
+--color=bg+:-1,bg:-1,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+--color=selected-bg:-1 \
+--multi"
 
-set PATH "/Users/lemon/go/bin:$PATH"
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
+end
 
-set PATH "/Users/lemon/.local/share/solana/install/active_release/bin:$PATH"
+source "$HOME/.cargo/env.fish"
 
-alias mamba="micromamba"
-alias cat="bat --theme=base16"
-alias q="QHOME=~/q rlwrap -r ~/q/m64/q"
-alias vim="nvim"
-alias fzf="fzf --preview 'bat --style=numbers --color=always {}' | xargs -n 1 nvim"
-alias ls="exa"
+zoxide init --cmd cd fish | source
 
-# rose pine fzf 
-set -Ux FZF_DEFAULT_OPTS "
-	--color=fg:#908caa,bg:#191724,hl:#ebbcba
-	--color=fg+:#e0def4,bg+:#26233a,hl+:#ebbcba
-	--color=border:#403d52,header:#31748f,gutter:#191724
-	--color=spinner:#f6c177,info:#9ccfd8,separator:#403d52
-	--color=pointer:#c4a7e7,marker:#eb6f92,prompt:#908caa"
+test -r '/Users/lemon/.opam/opam-init/init.fish' && source '/Users/lemon/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 
-# >>> mamba initialize >>>
-# !! Contents within this block are managed by 'mamba init' !!
-set -gx MAMBA_EXE "/opt/homebrew/opt/micromamba/bin/micromamba"
-set -gx MAMBA_ROOT_PREFIX "/Users/lemon/micromamba"
-$MAMBA_EXE shell hook --shell fish --root-prefix $MAMBA_ROOT_PREFIX | source
-# <<< mamba initialize <<<
-
-# opam configuration
-source /Users/lemon/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
-set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
-
-# bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
-# Wasmer
-export WASMER_DIR="/Users/lemon/.wasmer"
-[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+source "$HOME/.export-esp.sh"
 
-# zoxide
-zoxide init --cmd cd fish | source
+direnv hook fish | source
 
-source ~/.xmake/profile
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
-# Added by Radicle.
-export PATH="$PATH:/Users/lemon/.radicle/bin"
+fish_add_path -a /Users/lemon/.foundry/bin
