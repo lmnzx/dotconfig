@@ -1,0 +1,62 @@
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+FONT_FACE="MonoLisa Variable-Script"
+ICON_FONT="Hack Nerd Font"
+
+
+sketchybar --bar \
+    height=32 \
+    color=0x00000000 \
+    margin=0 \
+    sticky=on \
+    padding_left=20 \
+    padding_right=20 \
+    notch_width=188 
+
+sketchybar --default \
+    background.color=0xff24273a \
+    background.corner_radius=5 \
+    background.padding_right=5 \
+    background.height=26 \
+    icon.font="$ICON_FONT:Bold:18.0" \
+    icon.padding_left=5 \
+    icon.padding_right=5 \
+    label.font="$FONT_FACE:Bold:15.0" \
+    label.y_offset=0 \
+    label.padding_left=0 \
+    label.padding_right=5
+
+
+INITIAL_FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)
+
+sketchybar --add item aerospace.workspace left \
+           --set aerospace.workspace \
+           icon="󰀵" \
+           icon.y_offset=1 \
+           background.padding_right=7 \
+           label.padding_right=7 \
+           label.padding_left=2 \
+           label="$INITIAL_FOCUSED_WORKSPACE" \
+           click_script="aerospace workspace next"
+
+sketchybar --add item front_app left \
+           --set front_app \
+           icon.y_offset=1 \
+           script="$PLUGIN_DIR/front_app.sh" \
+           --subscribe front_app front_app_switched
+
+
+sketchybar --add item clock right \
+           --set clock update_freq=10 icon=  icon.color=0xffed8796 script="$PLUGIN_DIR/clock.sh"
+
+sketchybar --add item volume right \
+           --set volume script="$PLUGIN_DIR/volume.sh" \
+           --subscribe volume volume_change
+
+sketchybar --add item battery right \
+           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+           icon.color=0xff8aadf4 \
+           label.drawing=true \
+           --subscribe battery system_woke power_source_change
+
+sketchybar --update
